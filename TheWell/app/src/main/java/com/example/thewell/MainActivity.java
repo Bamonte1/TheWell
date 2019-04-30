@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ItemAdapter mAdapter;
     private EditText[] quantities;
+    StartActivity start;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        start = new StartActivity();
 
         //Fab processes EditText values
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -110,14 +113,22 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         switch(item.getItemId()) {
-            case R.id.action_order:
-                showToast("You selected Order.");
+            case R.id.action_phone:
+                showToast("(570) 246-5585");
                 return true;
-            case R.id.action_status:
-                showToast("You selected Status.");
+            case R.id.action_home:
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                finish();
+                startActivity(intent);
                 return true;
-            case R.id.action_favorite:
-                showToast("You selected Favorite.");
+            case R.id.action_mail:
+                showToast("kyle.anspach@cwc.life");
+                return true;
+            case R.id.action_map:
+                showToast("contact page");
+                return true;
+            case R.id.action_sound:
+                showToast("sound");
                 return true;
         }
 
