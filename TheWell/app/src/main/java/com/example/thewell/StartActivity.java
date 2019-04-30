@@ -1,21 +1,21 @@
 package com.example.thewell;
 
-import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+
 public class StartActivity extends AppCompatActivity {
+
+    private static final int ERROR_DIALOG_REQUEST = 9001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,9 @@ public class StartActivity extends AppCompatActivity {
                 showToast("kyle.anspach@cwc.life");
                 return true;
             case R.id.action_map:
-                showToast("contact page");
+                if(isServicesReady()) {
+                    init();
+                }
                 return true;
             case R.id.action_sound:
                 showToast("sound");
@@ -69,6 +71,32 @@ public class StartActivity extends AppCompatActivity {
 
     public void showToast (String msg) {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+    }
+
+    private void init() {
+
+        Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
+        finish();
+        startActivity(intent);
+
+    }
+
+    public boolean isServicesReady() {
+
+        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(StartActivity.this);
+
+        if(available == ConnectionResult.SUCCESS) {
+
+            return true;
+        }
+        else if(GoogleApiAvailability.getInstance().isUserResolvableError(available)) {
+            Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(StartActivity.this, available, ERROR_DIALOG_REQUEST);
+            dialog.show();
+        }
+        else {
+            Toast.makeText(this, "Sorry maps cannot be displayed", Toast.LENGTH_SHORT).show();
+        }
+        return false;
     }
 
 }

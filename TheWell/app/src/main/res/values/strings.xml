@@ -22,6 +22,8 @@
     <string name="chocolate_result">Chocolate: $0.25 x </string>
     <string name="done_title">done</string>
 
+    <string name="google_map_api_key">AIzaSyAF0sIlsiFIKFAZOrS5gAoh761DTkVybok</string>
+
     <string-array name="labels_array">
         <item>Home</item>
         <item>Work</item>
