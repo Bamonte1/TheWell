@@ -1,6 +1,7 @@
 package com.example.thewell;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -15,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -29,6 +32,7 @@ import java.util.List;
 
 public class ContactActivity extends AppCompatActivity implements OnMapReadyCallback {
 
+    private static final int ERROR_DIALOG_REQUEST = 9001;
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
@@ -109,7 +113,9 @@ public class ContactActivity extends AppCompatActivity implements OnMapReadyCall
                 showToast("kyle.anspach@cwc.life");
                 return true;
             case R.id.action_map:
-                showToast("contact page");
+                if(isServicesReady()) {
+                    init();
+                }
                 return true;
             case R.id.action_sound:
                 showToast("sound");
@@ -117,6 +123,32 @@ public class ContactActivity extends AppCompatActivity implements OnMapReadyCall
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void init() {
+
+        Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
+        finish();
+        startActivity(intent);
+
+    }
+
+    public boolean isServicesReady() {
+
+        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(ContactActivity.this);
+
+        if(available == ConnectionResult.SUCCESS) {
+
+            return true;
+        }
+        else if(GoogleApiAvailability.getInstance().isUserResolvableError(available)) {
+            Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(ContactActivity.this, available, ERROR_DIALOG_REQUEST);
+            dialog.show();
+        }
+        else {
+            Toast.makeText(this, "Sorry maps cannot be displayed", Toast.LENGTH_SHORT).show();
+        }
+        return false;
     }
 
     public void showToast (String msg) {
