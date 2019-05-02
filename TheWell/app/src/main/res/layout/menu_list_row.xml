@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp">
+
+    <ImageView
+        android:id="@+id/menu_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        app:srcCompat="@drawable/donut_circle" />
+
+    <TextView
+        android:id="@+id/menu_desc_text"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/donut_description"
+        android:layout_toRightOf="@id/menu_pic" />
+
+
+    <TextView
+        android:id="@+id/menu_price_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/donut_price"
+        android:textSize="18sp"
+        android:layout_toRightOf="@id/menu_pic"
+        android:layout_below="@id/menu_desc_text" />
+
+    <EditText
+        android:id="@+id/menu_quantity"
+        android:layout_width="54dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:layout_toEndOf="@id/menu_desc_text"
+        android:imeOptions="actionDone"
+        android:maxLines="1"
+        android:onClick="playAnimation"
+        />
+
+
+
+</RelativeLayout>

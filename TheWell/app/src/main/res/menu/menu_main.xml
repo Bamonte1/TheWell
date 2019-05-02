@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.thewell.StartActivity">
+
+    <item
+        android:id="@+id/action_phone"
+        android:orderInCategory="20"
+        android:title="Phone"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_action_phone" />
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_action_home"
+        android:orderInCategory="10"
+        android:title="Home"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_mail"
+        android:orderInCategory="30"
+        android:title="Email"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_action_mail" />
+    <item
+        android:id="@+id/action_sound"
+        android:orderInCategory="40"
+        android:title="Sound"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_action_sound" />
+    <item
+        android:id="@+id/action_map"
+        android:orderInCategory="50"
+        android:title="Contact"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_action_map" />
+</menu>
