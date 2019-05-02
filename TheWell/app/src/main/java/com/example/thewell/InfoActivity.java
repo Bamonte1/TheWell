@@ -1,20 +1,33 @@
 package com.example.thewell;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class InfoActivity extends AppCompatActivity {
 
     private static final int ERROR_DIALOG_REQUEST = 9001;
+
+    DatePicker date;
+
+    int dateDay, dateMonth, dateYear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +35,21 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        date = findViewById(R.id.datePicker);
+
+        date.setMinDate(System.currentTimeMillis());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            date.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
+                @Override
+                public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    dateYear = year;
+                    dateDay = dayOfMonth;
+                    dateMonth = monthOfYear;
+                }
+            });
+        }
 
     }
 
