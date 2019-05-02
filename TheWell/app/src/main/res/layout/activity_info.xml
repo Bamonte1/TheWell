@@ -181,7 +181,7 @@
         app:layout_constraintTop_toBottomOf="@id/deliveryLabel">
 
         <RadioButton
-            android:id="@+id/nextday"
+            android:id="@+id/delivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
@@ -193,7 +193,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="@string/pick_up" />
+            android:text="Pickup" />
     </RadioGroup>
 
     <Spinner
@@ -216,5 +216,18 @@
         android:datePickerMode="spinner"
         app:layout_constraintStart_toStartOf="@+id/deliveryLabel"
         app:layout_constraintTop_toBottomOf="@+id/pickupLabel"></DatePicker>
+
+    <Button
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="done"
+        android:text="Done"
+        app:layout_constraintBottom_toBottomOf="@+id/datePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/datePicker"
+        app:layout_constraintTop_toTopOf="@+id/datePicker" />
 
 </android.support.constraint.ConstraintLayout>
