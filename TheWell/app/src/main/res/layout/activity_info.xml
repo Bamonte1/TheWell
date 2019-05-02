@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,6 +10,18 @@
     <include
         android:id="@+id/include2"
         layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity">
 
     <TextView
         android:id="@+id/pickupLabel"
@@ -134,8 +146,9 @@
         android:layout_width="134dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="(xxx) xxx-xxxx"
+        android:hint="XXXXXXXXXX"
         android:inputType="phone"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/phoneLabel"
         app:layout_constraintStart_toStartOf="@+id/addressInfoText" />
 
@@ -198,10 +211,8 @@
 
     <Spinner
         android:id="@+id/labelSpinner"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/phoneText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -229,5 +240,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/datePicker"
         app:layout_constraintTop_toTopOf="@+id/datePicker" />
+
+</android.support.constraint.ConstraintLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

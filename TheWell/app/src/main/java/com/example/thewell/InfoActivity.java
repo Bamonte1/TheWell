@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,16 +24,23 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
+import java.util.Calendar;
+import java.util.List;
+import java.util.TimeZone;
+
 public class InfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private static final int ERROR_DIALOG_REQUEST = 9001;
 
     DatePicker date;
     EditText nameText, addressText, cityText, stateText, phoneText, noteText;
+    Spinner spinner;
 
     int dateDay, dateMonth, dateYear;
     String delivery, phoneType;
-    Spinner spinner;
+    String[] quantities;
+
+    Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +49,11 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Intent intent = getIntent();
+        quantities = intent.getStringArrayExtra("ORDER");
+
         nameText = findViewById(R.id.nameText);
-        addressText = findViewById(R.id.addressText);
+        addressText = findViewById(R.id.addressInfoText);
         cityText = findViewById(R.id.cityText);
         stateText = findViewById(R.id.stateText);
         phoneText = findViewById(R.id.phoneText);
@@ -61,9 +72,16 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
             spinner.setAdapter(adapter);
         }
 
+        phoneType = "Home";
+        delivery = "Delivery";
+
         date = findViewById(R.id.datePicker);
 
         date.setMinDate(System.currentTimeMillis());
+        date.setEnabled(false);
+        dateDay = calendar.DAY_OF_MONTH;
+        dateMonth = calendar.MONTH + 1;
+        dateYear = calendar.YEAR;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             date.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
@@ -86,6 +104,9 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
                 if (checked) {
                     delivery = "Delivery";
                     date.setEnabled(false);
+                    dateDay = calendar.DAY_OF_MONTH;
+                    dateMonth = calendar.MONTH + 1;
+                    dateYear = calendar.YEAR;
                 }
                 break;
             case R.id.pickup:
@@ -170,7 +191,30 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void done(View view) {
-        //send values to database
+
+        Database db = new Database(this);
+
+        String name = nameText.getText().toString();
+        String address = addressText.getText().toString();
+        String city = cityText.getText().toString();
+        String state = stateText.getText().toString();
+        String phone = phoneText.getText().toString();
+        String notes = noteText.getText().toString();
+
+        db.addInfo(new UserInfo(name, address, city, state, phone, phoneType, notes, delivery,
+                dateMonth + "/" + dateDay + "/" + dateYear));
+
+        List<UserInfo> info = db.getAllInfo();
+
+        for(UserInfo i : info) {
+            Log.d("Info", i.toString());
+        }
+
+        Intent intent = new Intent(getApplicationContext(), OrderActivity.class);
+        intent.putExtra("ORDER", quantities);
+        finish();
+        startActivity(intent);
+
     }
 
 }

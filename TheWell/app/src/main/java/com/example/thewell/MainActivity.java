@@ -50,13 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
         start = new StartActivity();
 
-        //Fab processes EditText values
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
                 processOrder(view);
             }
         });
@@ -105,8 +102,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Send quantities to order activity and open activity
-        Intent intent = new Intent(getApplicationContext(), OrderActivity.class);
+        Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
         intent.putExtra("ORDER", tempQuantities);
+        finish();
         startActivity(intent);
     }
 
