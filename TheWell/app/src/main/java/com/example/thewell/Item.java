@@ -1,6 +1,8 @@
 package com.example.thewell;
 
 import android.graphics.drawable.Drawable;
+import android.media.Rating;
+import android.widget.RatingBar;
 
 /**
  Jacob Bamonte
@@ -15,11 +17,13 @@ public class Item {
     private Drawable image;
     private String desc;
     private String price;
+    private int rate;
 
-    public Item(Drawable image, String desc, String price) {
+    public Item(Drawable image, String desc, String price, int rate) {
         this.image = image;
         this.desc = desc;
         this.price = price;
+        this.rate = rate;
     }
 
     public Drawable getImage() {
@@ -45,5 +49,15 @@ public class Item {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+
+
 
 }

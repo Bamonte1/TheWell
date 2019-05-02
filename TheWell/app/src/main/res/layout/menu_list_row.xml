@@ -54,6 +54,16 @@
         android:layout_toEndOf="@id/menu_desc_text"
         />
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu_pic"
+        android:layout_marginTop="5dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="5" />
+
 
 
 </RelativeLayout>

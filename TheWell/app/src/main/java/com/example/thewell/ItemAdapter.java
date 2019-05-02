@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -44,6 +45,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         itemViewHolder.image.setImageDrawable(itemList.get(i).getImage());
         itemViewHolder.desc.setText(itemList.get(i).getDesc());
         itemViewHolder.price.setText(itemList.get(i).getPrice());
+        itemViewHolder.rate.setRating(itemList.get(i).getRate());
     }
 
     @Override
@@ -57,6 +59,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         public TextView desc;
         public TextView price;
         public EditText quantity;
+        public RatingBar rate;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,6 +68,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             desc = (TextView) itemView.findViewById(R.id.menu_desc_text);
             price = (TextView) itemView.findViewById(R.id.menu_price_text);
             quantity = (EditText) itemView.findViewById(R.id.menu_quantity);
+            rate = (RatingBar) itemView.findViewById(R.id.ratingBar);
 
             //Set up listener for EditTexts to get values
             quantity.addTextChangedListener(new TextWatcher() {

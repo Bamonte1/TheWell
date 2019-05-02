@@ -25,7 +25,8 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".OrderActivity"></activity>
+        <activity android:name=".OrderActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ContactActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

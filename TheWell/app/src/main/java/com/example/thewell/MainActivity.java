@@ -20,6 +20,7 @@ import com.google.android.gms.common.GoogleApiAvailability;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  Jacob Bamonte
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ItemAdapter mAdapter;
     private EditText[] quantities;
     StartActivity start;
+    Random rand;
 
     private static final int ERROR_DIALOG_REQUEST = 9001;
 
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        rand = new Random();
 
         start = new StartActivity();
 
@@ -72,19 +76,19 @@ public class MainActivity extends AppCompatActivity {
 
     private void getData() {
         mItems.add(new Item(getDrawable(R.drawable.donut_circle),
-                getString(R.string.donut_description), getString(R.string.donut_price)));
+                getString(R.string.donut_description), getString(R.string.donut_price), rand.nextInt(6)));
 
         mItems.add(new Item(getDrawable(R.drawable.froyo_circle),
-                getString(R.string.froyo_description), getString(R.string.froyo_price)));
+                getString(R.string.froyo_description), getString(R.string.froyo_price), rand.nextInt(6)));
 
         mItems.add(new Item(getDrawable(R.drawable.icecream_circle),
-                getString(R.string.icecream_description), getString(R.string.icecream_price)));
+                getString(R.string.icecream_description), getString(R.string.icecream_price), rand.nextInt(6)));
 
         mItems.add(new Item(getDrawable(R.drawable.coffee_circle),
-                getString(R.string.coffee_description), getString(R.string.coffee_price)));
+                getString(R.string.coffee_description), getString(R.string.coffee_price), rand.nextInt(6)));
 
         mItems.add(new Item(getDrawable(R.drawable.chocolate_circle),
-                getString(R.string.chocolate_description), getString(R.string.chocolate_price)));
+                getString(R.string.chocolate_description), getString(R.string.chocolate_price), rand.nextInt(6)));
 
     }
 
