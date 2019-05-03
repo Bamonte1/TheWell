@@ -7,6 +7,8 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -75,6 +77,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+                    image.findViewById(R.id.menu_pic);
+                    Animation myAnim = AnimationUtils.loadAnimation(image.getContext() ,R.anim.bounce_select);
+                    MyInterpolator interpolator = new MyInterpolator(0.333, 10);
+                    myAnim.setInterpolator(interpolator);
+
+                    image.startAnimation(myAnim);
                 }
 
                 @Override
