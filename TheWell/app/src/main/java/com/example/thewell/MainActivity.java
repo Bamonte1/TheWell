@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
                 processOrder(view);
             }
         });
@@ -72,42 +70,38 @@ public class MainActivity extends AppCompatActivity {
 
         //Get data for Item for RecyclerView
         getData();
-
-        /*editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                Log.d(TAG, "EditorActionDetected");
-                Toast.makeText(getApplicationContext(),"OnEditorWorking",Toast.LENGTH_LONG).show();
-                if(actionId == EditorInfo.IME_ACTION_DONE){
-
-
-                }
-                return false;
-            }
-        });*/
     }
 
     private void getData() {
-        mItems.add(new Item(getDrawable(R.drawable.donut_circle),
-                getString(R.string.donut_description), getString(R.string.donut_price)));
+        mItems.add(new Item(getDrawable(R.drawable.burger),
+                getString(R.string.burger_description), getString(R.string.burger_price)));
 
-        mItems.add(new Item(getDrawable(R.drawable.froyo_circle),
-                getString(R.string.froyo_description), getString(R.string.froyo_price)));
+        mItems.add(new Item(getDrawable(R.drawable.dessert),
+                getString(R.string.dessert_description), getString(R.string.dessert_price)));
 
-        mItems.add(new Item(getDrawable(R.drawable.icecream_circle),
-                getString(R.string.icecream_description), getString(R.string.icecream_price)));
+        mItems.add(new Item(getDrawable(R.drawable.fish_taco),
+                getString(R.string.fish_taco_description), getString(R.string.fish_taco_price)));
 
-        mItems.add(new Item(getDrawable(R.drawable.coffee_circle),
+        mItems.add(new Item(getDrawable(R.drawable.coffee),
                 getString(R.string.coffee_description), getString(R.string.coffee_price)));
 
-        mItems.add(new Item(getDrawable(R.drawable.chocolate_circle),
-                getString(R.string.chocolate_description), getString(R.string.chocolate_price)));
+        mItems.add(new Item(getDrawable(R.drawable.pancake),
+                getString(R.string.pancake_description), getString(R.string.pancake_price)));
+
+        mItems.add(new Item(getDrawable(R.drawable.scrambler),
+                getString(R.string.scrambler_description), getString(R.string.scrambler_price)));
+
+        mItems.add(new Item(getDrawable(R.drawable.soup),
+                getString(R.string.soup_description), getString(R.string.soup_price)));
+
+        mItems.add(new Item(getDrawable(R.drawable.wrap),
+                getString(R.string.wrap_description), getString(R.string.wrap_price)));
 
     }
 
     private void processOrder(View view) {
 
-        String[] tempQuantities = new String[5];
+        String[] tempQuantities = new String[8];
 
         //Get EditText values from adapter
         for(int i = 0; i < mAdapter.quantities.length; i++) {
@@ -160,21 +154,5 @@ public class MainActivity extends AppCompatActivity {
 
     public void showToast (String msg) {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
-    }
-
-
-    public void playAnimation(View view) {
-        Log.d(TAG,"playAnimationStarted");
-        View menuList = getLayoutInflater().inflate(R.layout.menu_list_row, null);
-        ImageView image = menuList.findViewById(R.id.menu_pic);
-        EditText editText = menuList.findViewById(R.id.menu_quantity);
-
-        Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce_select);
-        Log.d(TAG, "IME_DONE");
-        // use bounce interpolator with amp .2 and freq of 20
-        MyInterpolator interpolator = new MyInterpolator(0.333, 10);
-        myAnim.setInterpolator(interpolator);
-
-        image.startAnimation(myAnim);
     }
 }

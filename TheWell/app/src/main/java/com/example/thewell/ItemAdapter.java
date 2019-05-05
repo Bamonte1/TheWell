@@ -27,7 +27,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     private List<Item> itemList;
 
-    public String[] quantities = new String[5];
+    public String[] quantities = new String[8];
 
     public ItemAdapter(List<Item> itemList) {
         this.itemList = itemList;
@@ -83,7 +83,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                     image.findViewById(R.id.menu_pic);
                     Animation myAnim = AnimationUtils.loadAnimation(image.getContext() ,R.anim.bounce_select);
                     Log.d(TAG,"Animation matched to context");
-                    MyInterpolator interpolator = new MyInterpolator(0.333, 10);
+                    MyInterpolator interpolator = new MyInterpolator(0.3, 15);
                     myAnim.setInterpolator(interpolator);
 
                     image.startAnimation(myAnim);
