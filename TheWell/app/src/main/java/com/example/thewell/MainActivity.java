@@ -91,17 +91,11 @@ public class MainActivity extends AppCompatActivity {
         mItems.add(new Item(getDrawable(R.drawable.scrambler),
                 getString(R.string.scrambler_description), getString(R.string.scrambler_price), rand.nextInt(6)));
 
-        mItems.add(new Item(getDrawable(R.drawable.soup),
-                getString(R.string.soup_description), getString(R.string.soup_price), rand.nextInt(6)));
-
-        mItems.add(new Item(getDrawable(R.drawable.wrap),
-                getString(R.string.wrap_description), getString(R.string.wrap_price), rand.nextInt(6)));
-
     }
 
     private void processOrder(View view) {
 
-        String[] tempQuantities = new String[8];
+        String[] tempQuantities = new String[6];
 
         //Get EditText values from adapter
         for(int i = 0; i < mAdapter.quantities.length; i++) {

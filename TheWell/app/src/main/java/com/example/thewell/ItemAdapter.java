@@ -27,7 +27,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     private List<Item> itemList;
 
-    public String[] quantities = new String[8];
+    public String[] quantities = new String[6];
 
     public ItemAdapter(List<Item> itemList) {
         this.itemList = itemList;

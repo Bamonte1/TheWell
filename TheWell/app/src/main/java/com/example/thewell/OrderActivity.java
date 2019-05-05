@@ -39,23 +39,19 @@ public class OrderActivity extends AppCompatActivity {
         TextView coffee = findViewById(R.id.coffee_result_text);
         TextView pancake = findViewById(R.id.pancake_result_text);
         TextView scrambler = findViewById(R.id.scrambler_result_text);
-        TextView soup = findViewById(R.id.soup_result_text);
-        TextView wrap = findViewById(R.id.wrap_result_text);
         TextView burgerSum = findViewById(R.id.burger_total_text);
         TextView dessertSum = findViewById(R.id.dessert_total_text);
         TextView fishSum = findViewById(R.id.fish_taco_total_text);
         TextView coffeeSum = findViewById(R.id.coffee_total_text);
         TextView pancakeSum = findViewById(R.id.pancake_total_text);
         TextView scramblerSum = findViewById(R.id.scrambler_total_text);
-        TextView soupSum = findViewById(R.id.soup_total_text);
-        TextView wrapSum = findViewById(R.id.wrap_total_text);
         TextView sum = findViewById(R.id.sum_text);
 
         //Get values from EditTexts
         Intent intent = getIntent();
         String[] quantities = intent.getStringArrayExtra("ORDER");
 
-        double[] totals = new double[8];
+        double[] totals = new double[6];
         double total;
         NumberFormat format = NumberFormat.getCurrencyInstance();
 
@@ -66,8 +62,6 @@ public class OrderActivity extends AppCompatActivity {
         coffee.setText(getString(R.string.coffee_result) +  " " + quantities[3] + " = ");
         pancake.setText(getString(R.string.pancake_result) +  " " + quantities[4] + " = ");
         scrambler.setText(getString(R.string.scrambler_result) +  " " + quantities[5] + " = ");
-        soup.setText(getString(R.string.soup_result) +  " " + quantities[6] + " = ");
-        wrap.setText(getString(R.string.wrap_result) +  " " + quantities[7] + " = ");
 
         //Calculate totals
         totals[0] = Integer.parseInt(quantities[0]) * 5.00;
@@ -76,11 +70,9 @@ public class OrderActivity extends AppCompatActivity {
         totals[3] = Integer.parseInt(quantities[3]) * 2.00;
         totals[4] = Integer.parseInt(quantities[4]) * 6.50;
         totals[5] = Integer.parseInt(quantities[5]) * 8.00;
-        totals[6] = Integer.parseInt(quantities[6]) * 3.50;
-        totals[7] = Integer.parseInt(quantities[7]) * 5.00;
 
         //Calculate sum of totals
-        total = totals[0] + totals[1] + totals[2] + totals[3] + totals[4] + totals[5] + totals[6] + totals[7];
+        total = totals[0] + totals[1] + totals[2] + totals[3] + totals[4] + totals[5];
 
         //Set totals
         burgerSum.setText(format.format(totals[0]));
@@ -89,8 +81,6 @@ public class OrderActivity extends AppCompatActivity {
         coffeeSum.setText(format.format(totals[3]));
         pancakeSum.setText(format.format(totals[4]));
         scramblerSum.setText(format.format(totals[5]));
-        soupSum.setText(format.format(totals[6]));
-        wrapSum.setText(format.format(totals[7]));
         sum.setText(format.format(total));
     }
 

@@ -95,7 +95,7 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
                 public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                     dateYear = year;
                     dateDay = dayOfMonth;
-                    dateMonth = monthOfYear;
+                    dateMonth = monthOfYear + 1;
                 }
             });
         }
