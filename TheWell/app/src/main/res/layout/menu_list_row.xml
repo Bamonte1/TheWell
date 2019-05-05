@@ -13,13 +13,17 @@
     android:paddingRight="16dp"
     android:paddingBottom="16dp">
 
+
+
     <ImageView
         android:id="@+id/menu_pic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginTop="8dp"
-        app:srcCompat="@drawable/donut_circle" />
+        app:srcCompat="@drawable/burger" />
+
+
 
     <TextView
         android:id="@+id/menu_desc_text"
@@ -27,8 +31,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        android:text="@string/donut_description"
+        android:text="@string/burger_description"
         android:layout_toRightOf="@id/menu_pic" />
+
+
+
 
 
     <TextView
@@ -37,10 +44,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginStart="4dp"
-        android:text="@string/donut_price"
+        android:text="@string/burger_price"
         android:textSize="18sp"
         android:layout_toRightOf="@id/menu_pic"
         android:layout_below="@id/menu_desc_text" />
+
+
 
     <EditText
         android:id="@+id/menu_quantity"
@@ -52,7 +61,7 @@
         android:inputType="number"
         android:textAlignment="center"
         android:layout_toEndOf="@id/menu_desc_text"
-        />
+        android:imeOptions="actionGo" />
 
     <RatingBar
         android:id="@+id/ratingBar"

@@ -13,44 +13,52 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:text="Order"
+        android:text="@string/order"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <TextView
-        android:id="@+id/donut_result_text"
+        android:id="@+id/burger_result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="@string/donut_result"
+        android:text="@string/burger_result"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/order_header_text" />
 
-    <TextView
-        android:id="@+id/froyo_result_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/froyo_result"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donut_result_text" />
+
 
     <TextView
-        android:id="@+id/icecream_result_text"
+        android:id="@+id/dessert_result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="@string/icecream_result"
+        android:text="@string/dessert_result"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/froyo_result_text" />
+        app:layout_constraintTop_toBottomOf="@+id/burger_result_text" />
+
+
+
+    <TextView
+        android:id="@+id/fish_taco_result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/fish_taco_result"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dessert_result_text" />
+
+
 
     <TextView
         android:id="@+id/coffee_result_text"
@@ -61,18 +69,55 @@
         android:text="@string/coffee_result"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icecream_result_text" />
+        app:layout_constraintTop_toBottomOf="@+id/fish_taco_result_text" />
+
+
 
     <TextView
-        android:id="@+id/chocolate_result_text"
+        android:id="@+id/pancake_result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="@string/chocolate_result"
+        android:text="@string/pancake_result"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coffee_result_text" />
+
+    <TextView
+        android:id="@+id/scrambler_result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/scrambler_result"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pancake_result_text" />
+
+    <TextView
+        android:id="@+id/soup_result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/soup_result"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrambler_result_text" />
+
+    <TextView
+        android:id="@+id/wrap_result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/wrap_result"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/soup_result_text" />
+
+
 
     <View
         android:id="@+id/divider"
@@ -82,35 +127,43 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chocolate_result_text" />
+        app:layout_constraintTop_toBottomOf="@+id/wrap_result_text" />
+
+
 
     <TextView
-        android:id="@+id/donut_total_text"
+        android:id="@+id/burger_total_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="38dp"
-        android:text="@string/donut_price"
+        android:text="@string/burger_price"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/donut_result_text" />
+        app:layout_constraintTop_toTopOf="@+id/burger_result_text" />
+
+
 
     <TextView
-        android:id="@+id/froyo_total_text"
+        android:id="@+id/dessert_total_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/froyo_price"
+        android:text="@string/dessert_price"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/donut_total_text"
-        app:layout_constraintTop_toTopOf="@+id/froyo_result_text" />
+        app:layout_constraintStart_toStartOf="@+id/burger_total_text"
+        app:layout_constraintTop_toTopOf="@+id/dessert_result_text" />
+
+
 
     <TextView
-        android:id="@+id/icecream_total_text"
+        android:id="@+id/fish_taco_total_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/icecream_price"
+        android:text="@string/fish_taco_price"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/froyo_total_text"
-        app:layout_constraintTop_toTopOf="@+id/icecream_result_text" />
+        app:layout_constraintStart_toStartOf="@+id/dessert_total_text"
+        app:layout_constraintTop_toTopOf="@+id/fish_taco_result_text" />
+
+
 
     <TextView
         android:id="@+id/coffee_total_text"
@@ -118,17 +171,56 @@
         android:layout_height="wrap_content"
         android:text="@string/coffee_price"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/icecream_total_text"
+        app:layout_constraintStart_toStartOf="@+id/fish_taco_total_text"
         app:layout_constraintTop_toTopOf="@+id/coffee_result_text" />
 
+
+
+
+
     <TextView
-        android:id="@+id/chocolate_total_text"
+        android:id="@+id/pancake_total_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/chocolate_price"
+        android:text="@string/pancake_price"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/coffee_total_text"
-        app:layout_constraintTop_toTopOf="@+id/chocolate_result_text" />
+        app:layout_constraintTop_toTopOf="@+id/pancake_result_text" />
+
+
+
+    <TextView
+        android:id="@+id/scrambler_total_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/scrambler_price"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/pancake_total_text"
+        app:layout_constraintTop_toTopOf="@+id/scrambler_result_text" />
+
+
+
+    <TextView
+        android:id="@+id/soup_total_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/soup_price"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/scrambler_total_text"
+        app:layout_constraintTop_toTopOf="@+id/soup_result_text" />
+
+
+
+    <TextView
+        android:id="@+id/wrap_total_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wrap_price"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/soup_total_text"
+        app:layout_constraintTop_toTopOf="@+id/wrap_result_text" />
+
+
 
     <TextView
         android:id="@+id/sum_text"
@@ -137,8 +229,10 @@
         android:layout_marginTop="24dp"
         android:text="$100.00"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/chocolate_total_text"
+        app:layout_constraintStart_toStartOf="@+id/wrap_total_text"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
 
     <Button
         android:id="@+id/done_button"

@@ -117,9 +117,6 @@ public class ContactActivity extends AppCompatActivity implements OnMapReadyCall
                     init();
                 }
                 return true;
-            case R.id.action_sound:
-                showToast("sound");
-                return true;
         }
 
         return super.onOptionsItemSelected(item);

@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        mItems.add(new Item(getDrawable(R.drawable.donut_circle),
+        /* mItems.add(new Item(getDrawable(R.drawable.donut_circle),
                 getString(R.string.donut_description), getString(R.string.donut_price), rand.nextInt(6)));
 
         mItems.add(new Item(getDrawable(R.drawable.froyo_circle),
@@ -86,12 +86,37 @@ public class MainActivity extends AppCompatActivity {
 
         mItems.add(new Item(getDrawable(R.drawable.chocolate_circle),
                 getString(R.string.chocolate_description), getString(R.string.chocolate_price), rand.nextInt(6)));
+                */
+
+        mItems.add(new Item(getDrawable(R.drawable.burger),
+                getString(R.string.burger_description), getString(R.string.burger_price), rand.nextInt(6)));
+
+        mItems.add(new Item(getDrawable(R.drawable.dessert),
+                getString(R.string.dessert_description), getString(R.string.dessert_price), rand.nextInt(6)));
+
+        mItems.add(new Item(getDrawable(R.drawable.fish_taco),
+                getString(R.string.fish_taco_description), getString(R.string.fish_taco_price), rand.nextInt(6)));
+
+        mItems.add(new Item(getDrawable(R.drawable.coffee),
+                getString(R.string.coffee_description), getString(R.string.coffee_price), rand.nextInt(6)));
+
+        mItems.add(new Item(getDrawable(R.drawable.pancake),
+                getString(R.string.pancake_description), getString(R.string.pancake_price), rand.nextInt(6)));
+
+        mItems.add(new Item(getDrawable(R.drawable.scrambler),
+                getString(R.string.scrambler_description), getString(R.string.scrambler_price), rand.nextInt(6)));
+
+        mItems.add(new Item(getDrawable(R.drawable.soup),
+                getString(R.string.soup_description), getString(R.string.soup_price), rand.nextInt(6)));
+
+        mItems.add(new Item(getDrawable(R.drawable.wrap),
+                getString(R.string.wrap_description), getString(R.string.wrap_price), rand.nextInt(6)));
 
     }
 
     private void processOrder(View view) {
 
-        String[] tempQuantities = new String[5];
+        String[] tempQuantities = new String[8];
 
         //Get EditText values from adapter
         for(int i = 0; i < mAdapter.quantities.length; i++) {
@@ -136,9 +161,6 @@ public class MainActivity extends AppCompatActivity {
                 if(isServicesReady()) {
                     init();
                 }
-                return true;
-            case R.id.action_sound:
-                showToast("sound");
                 return true;
         }
 

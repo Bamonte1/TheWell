@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,10 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+
+import java.time.Year;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -60,9 +65,6 @@ public class StartActivity extends AppCompatActivity {
                 if(isServicesReady()) {
                     init();
                 }
-                return true;
-            case R.id.action_sound:
-                showToast("sound");
                 return true;
         }
 

@@ -21,15 +21,10 @@
         android:title="Email"
         app:showAsAction="always"
         android:icon="@drawable/ic_action_mail" />
-    <item
-        android:id="@+id/action_sound"
-        android:orderInCategory="40"
-        android:title="Sound"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_action_sound" />
+
     <item
         android:id="@+id/action_map"
-        android:orderInCategory="50"
+        android:orderInCategory="40"
         android:title="Contact"
         app:showAsAction="always"
         android:icon="@drawable/ic_action_map" />

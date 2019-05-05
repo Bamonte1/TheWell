@@ -79,9 +79,9 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
 
         date.setMinDate(System.currentTimeMillis());
         date.setEnabled(false);
-        dateDay = calendar.DAY_OF_MONTH;
-        dateMonth = calendar.MONTH + 1;
-        dateYear = calendar.YEAR;
+        dateDay = calendar.get(calendar.DAY_OF_MONTH);
+        dateMonth = calendar.get(calendar.MONTH + 1);
+        dateYear = calendar.get(calendar.YEAR);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             date.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
@@ -141,9 +141,6 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
                 if(isServicesReady()) {
                     init();
                 }
-                return true;
-            case R.id.action_sound:
-                showToast("sound");
                 return true;
         }
 
