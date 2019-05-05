@@ -1,5 +1,11 @@
 package com.example.thewell;
 
+/**
+ Jacob Bamonte, Mike Moran
+ CIT382
+ Final Project
+ */
+
 public class UserInfo {
 
     private int id;

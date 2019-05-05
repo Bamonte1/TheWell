@@ -1,18 +1,18 @@
 package com.example.thewell;
 
+/**
+ Jacob Bamonte, Mike Moran
+ CIT382
+ Final Project
+ */
+
 import android.graphics.drawable.Drawable;
 import android.media.Rating;
 import android.widget.RatingBar;
 
-/**
- Jacob Bamonte
- CIT382
- Assignment 3 - Droid Cafe
- */
-
 public class Item {
 
-    //Constructor, getters, and setters for images, descriptions, and prices
+    //Constructor, getters, and setters for images, descriptions, prices, and rating
 
     private Drawable image;
     private String desc;

@@ -1,5 +1,11 @@
 package com.example.thewell;
 
+/**
+ Jacob Bamonte, Mike Moran
+ CIT382
+ Final Project
+ */
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +20,6 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
 import java.text.NumberFormat;
-
-/**
- Jacob Bamonte
- CIT382
- Assignment 3 - Droid Cafe
- */
 
 public class OrderActivity extends AppCompatActivity {
 

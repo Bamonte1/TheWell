@@ -1,5 +1,11 @@
 package com.example.thewell;
 
+/**
+ Jacob Bamonte, Mike Moran
+ CIT382
+ Final Project
+ */
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;

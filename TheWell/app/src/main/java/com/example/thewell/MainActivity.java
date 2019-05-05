@@ -1,5 +1,11 @@
 package com.example.thewell;
 
+/**
+ Jacob Bamonte, Mike Moran
+ CIT382
+ Final Project
+ */
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,12 +27,6 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-/**
- Jacob Bamonte
- CIT382
- Assignment 3 - Droid Cafe
- */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,21 +72,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        /* mItems.add(new Item(getDrawable(R.drawable.donut_circle),
-                getString(R.string.donut_description), getString(R.string.donut_price), rand.nextInt(6)));
-
-        mItems.add(new Item(getDrawable(R.drawable.froyo_circle),
-                getString(R.string.froyo_description), getString(R.string.froyo_price), rand.nextInt(6)));
-
-        mItems.add(new Item(getDrawable(R.drawable.icecream_circle),
-                getString(R.string.icecream_description), getString(R.string.icecream_price), rand.nextInt(6)));
-
-        mItems.add(new Item(getDrawable(R.drawable.coffee_circle),
-                getString(R.string.coffee_description), getString(R.string.coffee_price), rand.nextInt(6)));
-
-        mItems.add(new Item(getDrawable(R.drawable.chocolate_circle),
-                getString(R.string.chocolate_description), getString(R.string.chocolate_price), rand.nextInt(6)));
-                */
 
         mItems.add(new Item(getDrawable(R.drawable.burger),
                 getString(R.string.burger_description), getString(R.string.burger_price), rand.nextInt(6)));

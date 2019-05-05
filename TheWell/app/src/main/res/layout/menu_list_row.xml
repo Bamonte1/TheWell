@@ -50,7 +50,6 @@
         android:layout_below="@id/menu_desc_text" />
 
 
-
     <EditText
         android:id="@+id/menu_quantity"
         android:layout_width="54dp"

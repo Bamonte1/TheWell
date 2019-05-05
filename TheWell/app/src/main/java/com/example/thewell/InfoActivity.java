@@ -1,5 +1,11 @@
 package com.example.thewell;
 
+/**
+ Jacob Bamonte, Mike Moran
+ CIT382
+ Final Project
+ */
+
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -40,7 +46,7 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
     String delivery, phoneType;
     String[] quantities;
 
-    Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+    Calendar calendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +86,7 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
         date.setMinDate(System.currentTimeMillis());
         date.setEnabled(false);
         dateDay = calendar.get(calendar.DAY_OF_MONTH);
-        dateMonth = calendar.get(calendar.MONTH + 1);
+        dateMonth = calendar.get(calendar.MONTH) + 1;
         dateYear = calendar.get(calendar.YEAR);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

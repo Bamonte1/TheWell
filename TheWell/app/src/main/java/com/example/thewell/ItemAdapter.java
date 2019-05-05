@@ -1,5 +1,11 @@
 package com.example.thewell;
 
+/**
+ Jacob Bamonte, Mike Moran
+ CIT382
+ Final Project
+ */
+
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -16,12 +22,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.List;
-
-/**
- Jacob Bamonte
- CIT382
- Assignment 3 - Droid Cafe
- */
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
 
